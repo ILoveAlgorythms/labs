@@ -1,0 +1,213 @@
+\documentclass[a4paper,12pt]{article} % тип документа
+
+% Поля страниц
+\usepackage[left=2.5cm,right=2.5cm,
+    top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+    
+%Пакет дял таблиц   
+\usepackage{multirow} 
+    
+%Отступ после заголовка    
+\usepackage{indentfirst}
+
+
+% Рисунки
+\usepackage{floatrow,graphicx,calc}
+\usepackage{wrapfig}
+
+%%% Работа с картинками
+\usepackage{graphicx}  % Для вставки рисунков
+\graphicspath{{images/}{images2/}}  % папки с картинками
+\setlength\fboxsep{3pt} % Отступ рамки \fbox{} от рисунка
+\setlength\fboxrule{1pt} % Толщина линий рамки \fbox{}
+\usepackage{wrapfig} % Обтекание рисунков и таблиц текстом
+
+% Создаёем новый разделитель
+\DeclareFloatSeparators{mysep}{\hspace{1cm}}
+
+% Ссылки?
+\usepackage{hyperref}
+\usepackage[rgb]{xcolor}
+\hypersetup{				% Гиперссылки
+    colorlinks=true,       	% false: ссылки в рамках
+	urlcolor=blue          % на URL
+}
+
+
+%  Русский язык
+\usepackage[T2A]{fontenc}			% кодировка
+\usepackage[utf8]{inputenc}			% кодировка исходного текста
+\usepackage[english,russian]{babel}	% локализация и переносы
+
+
+% Математика
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+
+%%% Дополнительная работа с математикой
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} % AMS
+\usepackage{icomma} % "Умная" запятая: $0,2$ --- число, $0, 2$ --- перечисление
+
+
+% Что-то 
+\usepackage{wasysym}
+\title{\texttt{Исследование взаимной диффузии газов \\ 2.2.1}}
+\author{}
+\date{}
+
+\begin{document}
+  \maketitle
+
+\textbf{Цель работы:} 
+\begin{itemize}
+  \item  Регистрация зависимости концентрации гелия в воз-
+  духе от времени с помощью датчиков теплопроводности при разных
+  начальных давлениях смеси газов; 
+  \item Определение коэффициента диф-
+  фузии по результатам измерений.
+\end{itemize}
+\textbf{В работе используются:}  измерительная установка; форвакуумный
+насос; баллон с газом (гелий); манометр; источник питания; магазин
+сопротивлений; гальванометр; секундомер.
+
+\section*{\texttt{Теория}}
+Плотность потока вещества любого компонента в результате взаимной диффузии
+\begin{equation}
+  j_a = -D_{ab}\frac{\partial \eta_a}{\partial x}, 
+  j_b = -D_{ba}\frac{\partial \eta_b}{\partial x}
+\end{equation}
+где $D_{ab} = D_{ba}$ — коэффициент взаимной диффузии компонентов,
+$j_a, j_b$ — плотности потока частиц соответствующего сорта
+\section*{Экспериментальная установка}
+Схема экспериментальной установки представлена на рис. Поток воздуха поступает через газовый счетчки в металлические трубки, трубки имеют заглушки и отверстия для подключения микроманометра.  \ref{установка}. 
+
+\section*{Ход работы}
+
+Данные изменрений давления от расхода $\Delta P (Q)$ приведены ниже. 
+
+% \begin{center}
+%   Результаты измерений разности давлений от расхода $\Delta P (Q)$.  
+% \end{center}
+\begin{table}[!htb]
+  \begin{minipage}{.5\linewidth}
+    \caption{Для трубки $d_1$}
+    \centering
+      \begin{tabular}{|c|c|}
+      \hline
+      $Q$, мл/c & $\Delta P$, Па \\ \hline
+      06,4 &   9,81 \\ \hline
+      17,8 &  29,42 \\ \hline
+      31,0 &  49,04 \\ \hline
+      44,4 &  68,65 \\ \hline
+      57,2 &  88,26 \\ \hline
+      69,7 & 107,88 \\ \hline
+      84,0 & 127,49 \\ \hline
+      85,0 & 133,38 \\ \hline
+      92,3 & 147,11 \\ \hline
+      98,0 & 166,72 \\ \hline
+      102,7 & 186,33 \\ \hline
+      104,2 & 205,95 \\ \hline
+      106,4 & 225,56 \\ \hline
+      109,9 & 245,18 \\ \hline
+      \end{tabular}
+  \end{minipage}
+  \begin{minipage}{.5\linewidth}
+    \centering
+      \begin{tabular}{|c|c|}
+      \hline
+      $Q$, мл/c &  $\Delta P$, Па \\ \hline
+        27,0 &          9,81 \\ \hline
+        86,0 &         29,42 \\ \hline
+        52,0 &         19,61 \\ \hline
+        116,8 &         39,23 \\ \hline
+        138,5 &         49,04 \\ \hline
+        149,7 &         58,84 \\ \hline
+        158,7 &         68,65 \\ \hline
+        165,0 &         78,46 \\ \hline
+        171,0 &         88,26 \\ \hline
+        203,0 &        127,49 \\ \hline
+        233,0 &        166,72 \\ \hline
+        263,0 &        205,95 \\ \hline
+        285,0 &        239,29 \\ \hline
+      \end{tabular}
+  \end{minipage} 
+\end{table}
+
+Ниже на графике крестами выделены точки, начиная с которых начинается турбулетное течение. С помощью МНК построим линейную зависимость для точек, которые предположительно принадлежат ламинарному течению (график и его анализ представлены ниже).
+
+Из формулы Пуазейля имеем: 
+% \[\eta = \frac{k \pi R^4}{8 l}\]
+% \[Q = \frac{\pi R^4 \cdot \Delta P}{8 \eta l}\]
+\[\Delta P = Q \cdot \frac{8 \eta l}{\pi R ^4} = Q \cdot k\]
+
+Тогда для погрешности систематической получаем (с учётом, что погрешность $\Delta P$ есть погрешность измерения высоты столба воды, то есть равна $\sigma_{\Delta P} = 0,2 \cdot 9,807 \cdot  \sigma_h = 1,9$ Па): 
+\[\sigma_k^{\text{сист}} = k \cdot \sqrt{\left(\frac{\sigma_{\Delta P}}{{\Delta P}_{\max}}\right)^2 + \left(\frac{\sigma_Q}{Q_{\max}} \right)^2}\]
+
+
+Из МНК имеем, что:
+
+\begin{gather}
+  k = \frac{\langle Q \cdot \Delta P \rangle - \langle Q \rangle \cdot \langle \Delta P \rangle}{\langle {Q}^2 \rangle - {\langle Q \rangle}^2} \\
+  \sigma_k^{\text{случ}} = \sqrt{\frac{1}{N} \cdot \left(\frac{\langle {\Delta P}^2 \rangle}{\langle Q^2 \rangle} - k^2 \right)} \\
+  \sigma_k = \sqrt{(\sigma_k^{\text{случ}})^2 + (\sigma_k^{\text{сист}})^2} \\
+  \sigma_\eta = \eta \sqrt{{\left(\frac{\sigma_k}{k}\right)}^2 + 4^2 \cdot {\left(\frac{\sigma_R}{R}\right)}^2 + {\left(\frac{\sigma_l}{l}\right)}^2}
+\end{gather}
+
+% \[k = \frac{\langle Q \cdot \Delta P \rangle - \langle Q \rangle \cdot \langle \Delta P \rangle}{\langle {Q}^2 \rangle - {\langle Q \rangle}^2}\]
+\begin{table}
+  \caption{Результаты из МНК и графика}
+  \centering
+    \begin{tabular}{|c|c|c|}
+      \hline
+      & $d_1$ & $d_2$ \\ \hline
+      $k \cdot 10^6 $, $\text{Па $\cdot$ с / м $^3$ }$ & 1,53 & 0,37 \\ \hline
+      $\sigma_k^{\text{случ}} \cdot 10^6$, $\text{Па $\cdot$ с / м $^3$ }$ & 0,02 & 0,03 \\ \hline
+      $\sigma_k^{\text{сист}} \cdot 10^6$, $\text{Па $\cdot$ с / м $^3$ }$ & 0,02 & 0,01 \\ \hline
+      $\sigma_k \cdot 10^6$, $\text{Па $\cdot$ с / м $^3$ }$ & 0,03 & 0,03 \\ \hline
+      $\eta \cdot 10^-6$, Па $\cdot$ с & 6,96 & 8,05 \\ \hline
+      $\sigma_\eta \cdot 10^-6 $, Па $\cdot$ с & 0,38 & 0,71 \\ \hline 
+    \end{tabular}
+\end{table}
+
+То есть окончательно имеем, что: 
+\begin{align*}
+  \eta_1 = (6,96 \pm 0,38) \cdot 10^{-6} \text{Па $\cdot $ с} \\
+  \eta_2 = (8,05 \pm 0,71) \cdot 10^{-6} \text{Па $\cdot $ с}
+\end{align*}
+
+Далее найдём значение $Re = \frac{\rho Q}{\pi R \eta}$, $\sigma_{Re} = Re \cdot \sqrt{{\left( \frac{\sigma_Q}{Q} \right)} ^ 2 + {\left( \frac{\sigma_R}{R} \right)} ^ 2 + {\left( \frac{\sigma_\eta}{\eta} \right)} ^ 2}$ для каждой трубки.
+
+\begin{itemize}
+  \item $d_1$: $Q_\text{крит} = 0,085$ л/ с. То есть $Re = 2304 \pm 140$. 
+  \item $d_2$: $Q_\text{крит} = 0,149$ л/ с. То есть $Re = 2370 \pm 208$.
+\end{itemize}
+
+
+Далее определим длину участка трубы, на котором происходит уставновление потока. Построим график $P(x)$ для каждой трубы. Будем проводить прямую через все точки кроме первой, считая, что на них уже должно было почти установиться течение.
+
+\newpage
+\begin{itemize}
+  \item $d_1$. Ожидаемая длина: $l_{\text{уст}} = 0,2 \cdot R_1 \cdot Re = 0,91$ м.
+  \item $d_2$. Ожидаемая длина: $l_{\text{уст}} = 0,2 \cdot R_2 \cdot Re = 1,39$ м.
+\end{itemize}
+
+\section*{Вывод}
+
+Экспериментально исследовались свойства течения газов по тонким трубкам при различ-
+ных числах Рейнольдса; выявить область применимости закона Пуазейля и с его помощью
+определить коэффициент вязкости воздуха. Получили вязкость воздуха:
+\begin{align*}
+  \eta_1 = (6,96 \pm 0,38) \cdot 10^{-6} \text{Па $\cdot $ с} \\
+  \eta_2 = (8,05 \pm 0,71) \cdot 10^{-6} \text{Па $\cdot $ с}
+\end{align*}
+Учтя, что $\eta_\text{табл} = (1,3) \cdot 10^{-6} $Па $\cdot $ с. Это значение отличается от табличного, возможно это связанно с тем, что был не правильно выбран "нулевой" уровень для измерения давления.
+
+Число Рейнольдса получилось $Re_1 = 2304 \pm 140$ и $Re_2 = 2370 \pm 208$, что тоже отличается от $Re \sim 1000$, что скорее всего также связанно с неправильным выбором "нулевого" уровня.
+
+
+%   \caption{Зависимость $\Delta P(Q)$.}
+%   \caption{Зависимость $P(x)$.}
+
+
+
+\end{document}
+
