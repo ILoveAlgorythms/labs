@@ -1,55 +1,5 @@
-\documentclass[a4paper,12pt]{article} % тип документа
 
-% Поля страниц
-\usepackage[left=2.5cm,right=2.5cm,
-    top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
-    
-%Пакет дял таблиц   
-\usepackage{multirow} 
-    
-%Отступ после заголовка    
-\usepackage{indentfirst}
-
-
-% Рисунки
-\usepackage{floatrow,graphicx,calc}
-\usepackage{wrapfig}
-
-%%% Работа с картинками
-\usepackage{graphicx}  % Для вставки рисунков
-\graphicspath{{images/}{images2/}}  % папки с картинками
-\setlength\fboxsep{3pt} % Отступ рамки \fbox{} от рисунка
-\setlength\fboxrule{1pt} % Толщина линий рамки \fbox{}
-\usepackage{wrapfig} % Обтекание рисунков и таблиц текстом
-
-% Создаёем новый разделитель
-\DeclareFloatSeparators{mysep}{\hspace{1cm}}
-
-% Ссылки?
-\usepackage{hyperref}
-\usepackage[rgb]{xcolor}
-\hypersetup{				% Гиперссылки
-    colorlinks=true,       	% false: ссылки в рамках
-	urlcolor=blue          % на URL
-}
-
-
-%  Русский язык
-\usepackage[T2A]{fontenc}			% кодировка
-\usepackage[utf8]{inputenc}			% кодировка исходного текста
-\usepackage[english,russian]{babel}	% локализация и переносы
-
-
-% Математика
-\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
-
-%%% Дополнительная работа с математикой
-\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} % AMS
-\usepackage{icomma} % "Умная" запятая: $0,2$ --- число, $0, 2$ --- перечисление
-
-
-% Что-то 
-\usepackage{wasysym}
+\input{preamble.tex}
 \title{\texttt{Исследование взаимной диффузии газов \\ 2.2.1}}
 \author{}
 \date{}
