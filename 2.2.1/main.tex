@@ -1,5 +1,7 @@
+% !TeX root = main.tex
+\documentclass[11pt,a4paper]{article}
 
-\input{preamble.tex}
+\input{../preamble.tex}
 \title{\texttt{Исследование взаимной диффузии газов \\ 2.2.1}}
 \author{}
 \date{}
@@ -7,13 +9,13 @@
 \begin{document}
   \maketitle
 
-\textbf{Цель работы:} 
+\textbf{Цель работы:}
 \begin{itemize}
-  \item  Регистрация зависимости концентрации гелия в воз-
-  духе от времени с помощью датчиков теплопроводности при разных
-  начальных давлениях смеси газов; 
-  \item Определение коэффициента диф-
-  фузии по результатам измерений.
+  \item  Регистрация зависимости концентрации гелия в воздухе
+  от времени с помощью датчиков теплопроводности при разных
+  начальных давлениях смеси газов;
+  \item Определение коэффициента диффузии
+   по результатам измерений.
 \end{itemize}
 \textbf{В работе используются:}  измерительная установка; форвакуумный
 насос; баллон с газом (гелий); манометр; источник питания; магазин
@@ -22,141 +24,149 @@
 \section*{\texttt{Теория}}
 Плотность потока вещества любого компонента в результате взаимной диффузии
 \begin{equation}
-  j_a = -D_{ab}\frac{\partial \eta_a}{\partial x}, 
+  j_a = -D_{ab}\frac{\partial \eta_a}{\partial x},
   j_b = -D_{ba}\frac{\partial \eta_b}{\partial x}
 \end{equation}
 где $D_{ab} = D_{ba}$ — коэффициент взаимной диффузии компонентов,
-$j_a, j_b$ — плотности потока частиц соответствующего сорта
-\section*{Экспериментальная установка}
-Схема экспериментальной установки представлена на рис. Поток воздуха поступает через газовый счетчки в металлические трубки, трубки имеют заглушки и отверстия для подключения микроманометра.  \ref{установка}. 
+$j_a, j_b$ — плотности потока частиц соответствующего сорта. Тогда: \fbox{$J = DS\frac{n_1 - n_2}{l}$}\\
+Из закона сохранения количества вещества получаем: 
+\begin{equation}
+  \Delta n = \Delta n_0 \cdot e^{-t/\tau}
+\end{equation}, где $\tau = \frac{V_1V_2}{V_1 + V_2} \frac{l}{SD}$
+Для проверки применимости квазистационарного приближения необходимо убедиться,
+что время $\tau$ много больше характерного времени
+диффузии одной частицы вдоль трубки длиной l: $t_\text{дифф} \sim \frac{l^2}{D} \ll \tau$\\
 
+Приведём теоретическую оценку для коэффициента диффузии. В работе концентрация гелия,
+как правило, мала ($n_{He} << n_\text{воздуха}$). Кроме того, атомы гелия легче молекул, составляющих воздух
+($m_{He} << m_{N_2}, m_{O_2}$), значит их средняя тепловая скорость велика по сравнению с остальными частицами.
+Поэтому перемешивание газов в работе можно приближенно описывать как диффузию
+примеси лёгких частиц He на практически стационарном фоне воздуха. Коэффициент диффузии
+в таком приближении равен
+\[D = \frac{1}{3}\lambda\langle v \rangle\]
+где $\lambda = \frac{1}{n\sigma}$ -- длина свободного пробега диффундирующих частиц, $\langle v \rangle = \sqrt{\frac{8kT}{\pi m}}$ -- средняя тепловая скорость.
+
+\section*{Экспериментальная установка}
+Важные константы:\\
+  \[V_1 = V_2 = (800 \pm 5)\text{ см}^3\]
+  \[ \frac{l}{S} = (15,0 \pm 0,1)\text{ см}^{-1}\]
+  \[\text{Атомсферное давление: 732 торр}\]
+\begin{figure}[h]
+  \includegraphics*[width=\textwidth]{ustanovka.png}
+  \caption{Установка для исследования взаимной диффузии газов}
+  \label{fig:ust}
+\end{figure}
+
+Схема экспериментальной установки представлена на рис~\ref{fig:ust}.
+Поток воздуха поступает через газовый счетчки в металлические трубки,
+трубки имеют заглушки и отверстия для подключения микроманометра.
+
+Принцип работы дачтика теплопроводности:
+\begin{figure}
+  \includegraphics*[width=\textwidth]{ust2.png}
+  \caption{Мостовая схема
+  с датчиками теплопроводности для измерения разности концентраций газов}
+  \label{fig:ust2}
+\end{figure}
+Количество тепла, передающееся стенке в единицу времени:
+\begin{equation}
+  Q = \chi \frac{2 \pi l}{ln(R_\text{}P/r_\text{})}(T_1 - T_2)
+\end{equation}
+При достаточно малых изменениях концентраций можно ожидать,
+что величина тока, проходящего через гальванометр G,
+будет пропорциональна разности концентраций (первый
+член разложения функции в ряд Тейлора). Эксперименты показывают,
+что при разности концентраций, равной 15\%, поправка к линейному за-
+кону не превышает 0,5\%, что для наших целей вполне достаточно => \fbox{$N = N_0e^-t/\tau$}, где
+N -- показания гальванометра, $N_0$ -- показания в начальный момент времени.
 \section*{Ход работы}
 
-Данные изменрений давления от расхода $\Delta P (Q)$ приведены ниже. 
+\begin{enumerate}
+  \item пункты 1-6 -- подготовка установки, выполняем их
+  \setcounter{enumi}{6}
+  \item Провели измерения для рабочих давлений в 40, 80, 120, 160, 200, 240 торр
+  \item Мы получили зависимости U(t) для 6 давлений. $ln(U) = ln(U_0e^{-t/\tau}) = ln(U_0) - \frac{t}{\tau}$ =>
+  $k = -1/\tau$ -- угловой коэффициент графика $ln(U)(t)$. 
+  \begin{equation}
+    -1/\tau = -\frac{V_1 + V_2}{V_1V_2}\frac{SD}{l}\ =>\ 
+    \underline{D = \frac{-kl}{S} \frac{V_1V_2}{V_1 + V_2}}
+  \end{equation} 
+  По формуле МНК:
+  \begin{gather}
+    \ln \left(\frac{U}{U_0}\right) = -kt \\
+    k = -\frac{\langle \ln (U/U_0 \cdot t)  \rangle - \langle \ln (U/U_0) \rangle \cdot \langle t \rangle}{\langle t^2 \rangle - {\langle t \rangle}^2} \\
+    \sigma_k^{\text{случ}} = \sqrt{\frac{1}{N} \cdot \left(\frac{ \langle {\ln (U/U_0)}^2 \rangle}{\langle t^2 \rangle} - k^2 \right)}
+  \end{gather}
+  $\sigma_k^\text{полное} = \sigma_k^\text{случайное}$, т.к. $\sigma_k^\text{систематическое} \sim 0$
+  (т.к. оно складывается из измерения U и t, а это считает компьютер)
+  
+  Погрешность коэффициента диффузии:
+  \begin{gather}
+    \sigma_D = D \cdot \sqrt{\left(\frac{\sigma_k}{k}\right)^2 + \left(\frac{\sigma_{L/S}}{L/S}\right)^2 + \left(\frac{\sigma_{V_1}}{V_1}\right)^2  + \left(\frac{\sigma_{V_2}}{V_2}\right)^2 + \left(\frac{\sigma_{V_1 + V_2}}{V_1 + V_2}\right)^2 }
+  \end{gather}
 
-% \begin{center}
-%   Результаты измерений разности давлений от расхода $\Delta P (Q)$.  
-% \end{center}
-\begin{table}[!htb]
-  \begin{minipage}{.5\linewidth}
-    \caption{Для трубки $d_1$}
-    \centering
-      \begin{tabular}{|c|c|}
-      \hline
-      $Q$, мл/c & $\Delta P$, Па \\ \hline
-      06,4 &   9,81 \\ \hline
-      17,8 &  29,42 \\ \hline
-      31,0 &  49,04 \\ \hline
-      44,4 &  68,65 \\ \hline
-      57,2 &  88,26 \\ \hline
-      69,7 & 107,88 \\ \hline
-      84,0 & 127,49 \\ \hline
-      85,0 & 133,38 \\ \hline
-      92,3 & 147,11 \\ \hline
-      98,0 & 166,72 \\ \hline
-      102,7 & 186,33 \\ \hline
-      104,2 & 205,95 \\ \hline
-      106,4 & 225,56 \\ \hline
-      109,9 & 245,18 \\ \hline
-      \end{tabular}
-  \end{minipage}
-  \begin{minipage}{.5\linewidth}
-    \centering
-      \begin{tabular}{|c|c|}
-      \hline
-      $Q$, мл/c &  $\Delta P$, Па \\ \hline
-        27,0 &          9,81 \\ \hline
-        86,0 &         29,42 \\ \hline
-        52,0 &         19,61 \\ \hline
-        116,8 &         39,23 \\ \hline
-        138,5 &         49,04 \\ \hline
-        149,7 &         58,84 \\ \hline
-        158,7 &         68,65 \\ \hline
-        165,0 &         78,46 \\ \hline
-        171,0 &         88,26 \\ \hline
-        203,0 &        127,49 \\ \hline
-        233,0 &        166,72 \\ \hline
-        263,0 &        205,95 \\ \hline
-        285,0 &        239,29 \\ \hline
-      \end{tabular}
-  \end{minipage} 
+
+  занесём в таблицу:
+  \begin{table}[h!]
+    % \vspace{5pt}
+    \begin{center}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    $P_\text{раб}$, торр & $D$, см$^2/$с & $\sigma_D$, см$^2/$с \\ \hline
+    40  & 29.7 & 0.38 \\ \hline
+    80  & 14.7 & 0.19 \\ \hline
+    120 & 10.5 & 0.13 \\ \hline
+    160 & 8.4  & 0.11 \\ \hline
+    200 & 6.6  & 0.08 \\ \hline
+    240 & 5.3  & 0.07 \\ \hline
+    \end{tabular}
+
+    \caption{Зависимость коэффициента диффузии от давления}
+    \label{data}
+    \end{center}
 \end{table}
 
-Ниже на графике крестами выделены точки, начиная с которых начинается турбулетное течение. С помощью МНК построим линейную зависимость для точек, которые предположительно принадлежат ламинарному течению (график и его анализ представлены ниже).
-
-Из формулы Пуазейля имеем: 
-% \[\eta = \frac{k \pi R^4}{8 l}\]
-% \[Q = \frac{\pi R^4 \cdot \Delta P}{8 \eta l}\]
-\[\Delta P = Q \cdot \frac{8 \eta l}{\pi R ^4} = Q \cdot k\]
-
-Тогда для погрешности систематической получаем (с учётом, что погрешность $\Delta P$ есть погрешность измерения высоты столба воды, то есть равна $\sigma_{\Delta P} = 0,2 \cdot 9,807 \cdot  \sigma_h = 1,9$ Па): 
-\[\sigma_k^{\text{сист}} = k \cdot \sqrt{\left(\frac{\sigma_{\Delta P}}{{\Delta P}_{\max}}\right)^2 + \left(\frac{\sigma_Q}{Q_{\max}} \right)^2}\]
 
 
-Из МНК имеем, что:
 
+В формуле, связывающей коэффициент диффузии и
+длину свободного пробега, подставим $\lambda\langle v \rangle$:
 \begin{gather}
-  k = \frac{\langle Q \cdot \Delta P \rangle - \langle Q \rangle \cdot \langle \Delta P \rangle}{\langle {Q}^2 \rangle - {\langle Q \rangle}^2} \\
-  \sigma_k^{\text{случ}} = \sqrt{\frac{1}{N} \cdot \left(\frac{\langle {\Delta P}^2 \rangle}{\langle Q^2 \rangle} - k^2 \right)} \\
-  \sigma_k = \sqrt{(\sigma_k^{\text{случ}})^2 + (\sigma_k^{\text{сист}})^2} \\
-  \sigma_\eta = \eta \sqrt{{\left(\frac{\sigma_k}{k}\right)}^2 + 4^2 \cdot {\left(\frac{\sigma_R}{R}\right)}^2 + {\left(\frac{\sigma_l}{l}\right)}^2}
+  D = \frac{kT}{3\sigma} \sqrt{\frac{8RT}{\pi \mu_{He}}} \frac{1}{P} := C \cdot \frac{1}{P} \\
+  C = \frac{\langle D \cdot 1/P \rangle - \langle D \rangle \cdot \langle 1/P \rangle }{\langle 1/P^2 \rangle - {\langle 1/P \rangle} ^ 2} \\
+  \sigma_C^{\text{случ}} = \sqrt{\frac{1}{N} \cdot \left(\frac{ \langle {D}^2 \rangle}{\langle 1/P^2 \rangle} - k^2 \right)}
 \end{gather}
 
-% \[k = \frac{\langle Q \cdot \Delta P \rangle - \langle Q \rangle \cdot \langle \Delta P \rangle}{\langle {Q}^2 \rangle - {\langle Q \rangle}^2}\]
-\begin{table}
-  \caption{Результаты из МНК и графика}
-  \centering
-    \begin{tabular}{|c|c|c|}
-      \hline
-      & $d_1$ & $d_2$ \\ \hline
-      $k \cdot 10^6 $, $\text{Па $\cdot$ с / м $^3$ }$ & 1,53 & 0,37 \\ \hline
-      $\sigma_k^{\text{случ}} \cdot 10^6$, $\text{Па $\cdot$ с / м $^3$ }$ & 0,02 & 0,03 \\ \hline
-      $\sigma_k^{\text{сист}} \cdot 10^6$, $\text{Па $\cdot$ с / м $^3$ }$ & 0,02 & 0,01 \\ \hline
-      $\sigma_k \cdot 10^6$, $\text{Па $\cdot$ с / м $^3$ }$ & 0,03 & 0,03 \\ \hline
-      $\eta \cdot 10^-6$, Па $\cdot$ с & 6,96 & 8,05 \\ \hline
-      $\sigma_\eta \cdot 10^-6 $, Па $\cdot$ с & 0,38 & 0,71 \\ \hline 
-    \end{tabular}
-\end{table}
+Построим график зависимости $D$ от $1/P$ чтобы проверить это, учтя, что $\sigma_{1/P} = \sigma_P / P^2$, где $\sigma_P = 7.5$ торр. Подставим значение атмосферного давления и найдём коэффицент диффузии.
+\[\frac{kT}{3\sigma} \sqrt{\frac{8RT}{\pi \mu_{He}}} = (1153.6 \pm 19.2) \ \text{ торр*см$^2$/с }\]
+\[P_{\text{атм}} = 732 \text{торр}\]\[  D_{\text{атм}} = (2.33 \pm 0,04) \  \text{см$^2$/с}\]
 
-То есть окончательно имеем, что: 
-\begin{align*}
-  \eta_1 = (6,96 \pm 0,38) \cdot 10^{-6} \text{Па $\cdot $ с} \\
-  \eta_2 = (8,05 \pm 0,71) \cdot 10^{-6} \text{Па $\cdot $ с}
-\end{align*}
-
-Далее найдём значение $Re = \frac{\rho Q}{\pi R \eta}$, $\sigma_{Re} = Re \cdot \sqrt{{\left( \frac{\sigma_Q}{Q} \right)} ^ 2 + {\left( \frac{\sigma_R}{R} \right)} ^ 2 + {\left( \frac{\sigma_\eta}{\eta} \right)} ^ 2}$ для каждой трубки.
-
-\begin{itemize}
-  \item $d_1$: $Q_\text{крит} = 0,085$ л/ с. То есть $Re = 2304 \pm 140$. 
-  \item $d_2$: $Q_\text{крит} = 0,149$ л/ с. То есть $Re = 2370 \pm 208$.
-\end{itemize}
+Вспомниая выражения для длины свободного пробега:
+\[\lambda = \frac{3D}{\langle \upsilon \rangle} = \frac{3D}{\sqrt{\frac{8RT}{\pi \mu_{He}}}} = (704 \pm 7) \ \text{нм}\]
 
 
-Далее определим длину участка трубы, на котором происходит уставновление потока. Построим график $P(x)$ для каждой трубы. Будем проводить прямую через все точки кроме первой, считая, что на них уже должно было почти установиться течение.
+Подставляем комнатную температуру $T = 295K$ и получаем значение эффективного сечения:
 
-\newpage
-\begin{itemize}
-  \item $d_1$. Ожидаемая длина: $l_{\text{уст}} = 0,2 \cdot R_1 \cdot Re = 0,91$ м.
-  \item $d_2$. Ожидаемая длина: $l_{\text{уст}} = 0,2 \cdot R_2 \cdot Re = 1,39$ м.
-\end{itemize}
+\begin{equation}
+    \sigma = \frac{kT}{\sqrt{\lambda P}} = (5.3 \pm 0.3) \cdot 10^{-2} \text{нм$^2$}.
+\end{equation}
+\end{enumerate}
 
 \section*{Вывод}
-
-Экспериментально исследовались свойства течения газов по тонким трубкам при различ-
-ных числах Рейнольдса; выявить область применимости закона Пуазейля и с его помощью
-определить коэффициент вязкости воздуха. Получили вязкость воздуха:
-\begin{align*}
-  \eta_1 = (6,96 \pm 0,38) \cdot 10^{-6} \text{Па $\cdot $ с} \\
-  \eta_2 = (8,05 \pm 0,71) \cdot 10^{-6} \text{Па $\cdot $ с}
-\end{align*}
-Учтя, что $\eta_\text{табл} = (1,3) \cdot 10^{-6} $Па $\cdot $ с. Это значение отличается от табличного, возможно это связанно с тем, что был не правильно выбран "нулевой" уровень для измерения давления.
-
-Число Рейнольдса получилось $Re_1 = 2304 \pm 140$ и $Re_2 = 2370 \pm 208$, что тоже отличается от $Re \sim 1000$, что скорее всего также связанно с неправильным выбором "нулевого" уровня.
-
-
-%   \caption{Зависимость $\Delta P(Q)$.}
-%   \caption{Зависимость $P(x)$.}
-
+Полученная величина коэффициента диффузии отличается от табличной (0.9 торр*см$^2$/с) в 2.5 раза, что
+что совпадает только по порядку. Длина свободного пробега отличается в 4 раза, совпадает только по порядку.
+Методом исключения полагаю, что наибольшуюю погрешность вносит измерение зависимости кожфицента диффузии от концентрации,
+а именно выбранная модель.
+\section*{\textbf{Графики:}}
+\begin{figure}[h]
+  \includegraphics*[width=\textwidth]{all.png}
+  \label{fig:ust}
+\end{figure}
+\newpage
+\begin{figure}[h]
+  \includegraphics*[width=\textwidth]{dd(1p).png}
+  \label{fig:ust}
+\end{figure}
 
 
 \end{document}
