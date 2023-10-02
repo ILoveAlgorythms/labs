@@ -1,5 +1,5 @@
 % !TeX root = main.tex
-\documentclass[11pt,a4paper]{article}
+\documentclass[12pt,a4paper]{article}
 \input{../preamble.tex}
 %%% значок в itemize
 \renewcommand{\labelitemi}{$\multimap  $}
@@ -11,9 +11,9 @@
 \maketitle
 
 \textbf{Цель работы:}
+
 \begin{itemize}
-  \item  Изучение вольт-амперной характеристики тлеющего раз­
-  ряда
+  \item  Изучение вольт-амперной характеристики тлеющего раз­ряда
   \item Изучение свойств плазмы методом зондовых характеристик.
 \end{itemize}
 
@@ -31,7 +31,7 @@
 \section*{Экспериментальная установка}
 % \subsection*{\texttt{Важные константы:}}
 
-\begin{figure}[h!]
+\begin{figure}[H]
   \includegraphics*[width=\textwidth]{2023-09-02-00-10-53.png}
   \caption{Схема установки для исследования газового разряда}
   \label{fig:ust}
@@ -69,47 +69,89 @@
   чтобы снять отрицательныую ветку ВАХа
   \item повторим пункты 2-3 для силы тока на ВИП в $3мА$ и $1.5мА$
 \end{enumerate}
-
+\newpage
 \subsection*{Обработка результатов}
 \begin{enumerate}
   \item Построим ВАХ разряда:
-  \begin{figure}[h!]
+  \begin{figure}[H]
     \includegraphics*[width=\textwidth]{p1.png}
     \caption{ВАХ разряда}
     \label{fig:graph.p1}
   \end{figure}
-  Максимальное дифференциальное сопротивление: $R_{дифф} = 0.638\ \Omega$
-  \\График соответствует участку графика ЗЖ, сила тока так же убвыает ДОДЕЛАТЬ:
-  \begin{figure}[h!]
+  Максимальное дифференц% работает как include в C++иальное сопротивление: $R_{дифф} = 0.638\ \Omega$
+  \\График соответствует участку графика ЗЖ, сила тока так же убвыает:
+  \begin{figure}
     \includegraphics*[width=\textwidth]{2023-09-07-12-28-48.png}
     \caption{Рисунок из лабника}
-  \end{figure}\newpage
-  \item Зондовые характеристики на отдельных графиках в конце.
-  \begin{figure}[h!]
-    \includegraphics*[width=\textwidth]{p2.png}
-    \caption{Зондовые зарактеристики}
-    \label{fig:graph.p2}
   \end{figure}
-  \begin{table}[h!]
-    \begin{center}
-      \begin{tabular}{|c|c|c|c|c|c|}
-        \hline
-        $\alpha \cdot 10^{-6},~\frac{торр}{с}$ & $\sigma_{\alpha}^{сл}\cdot 10^{-6},~\frac{торр}{с}$& $\varepsilon_{\alpha}$ &$\sigma_{\alpha}\cdot^{-6},~\frac{торр}{с}$&  $Q_{д}+Q_{и},~торр\cdot\frac{л}{с}$ & $\sigma_{Q_{д}+Q_{и}},~торр\cdot\frac{л}{с}$\\
-        \hline
-        8.9& 0.05 & 2.1 \% & 0.2 & $1.16\cdot10^{-5}$& {$0.07\cdot10^{-5}$}\\
-        \hline
-        8.1&0.04&2.1& 0.2 & $1.05\cdot10^{-5}$ & {$0.06\cdot10^{-5}$} \\
-        \hline
-      \end{tabular}
-    \end{center}
-    \caption{Коэффициенты наклона при ухудшении вакуума}
-    \label{tab2}
-  \end{table}
-  
+  \item Зондовые характеристики на отдельных графиках в конце.
+  \item Оценим температуру электронов по формуле из лабника:
+  \begin{tabular}{l|r}
+    I, мА & $T_e, K$\\
+    \midrule
+    5   &  61738 \\
+    3   &  52150 \\
+    1.5 &  42876 \\
+    \end{tabular}
+  \item Определим концентрацию электронов по формуле Бома:
+  $I_{in} = 0.4n_eeS\sqrt{\frac{2kT_e}{m_i}}$\\
+  $n_e = \frac{I_{in}}{0.4eS\sqrt{\frac{2kT_e}{m_i}}}$
+  \begin{tabular}{l|r}
+    I, мА & $n_e,\cdot 10^{13}$ \\
+    \midrule
+    5   &  6.2 \\
+    3   &  3.5 \\
+    1.5 &  1.7 \\
+  \end{tabular}
+  \item Расчитаем плазменную частоту колебаний:
+  \begin{tabular}{l|r}
+     & $\omega_p \cdot10^3,$рад/с \\
+    \midrule
+    5   &  4.51 \\
+    3   &  3.38 \\
+    1.5 &  2.38 \\
+    \end{tabular}
+  \item Расчитаем поляризационную длину и длину Дебая:
+  \begin{tabular}{lr}
+    I, мА & $r_{D_e}, см$ \\
+    \midrule
+    5 &  201 \\
+    3 &  247 \\
+    1.5 &  318 \\
+    \end{tabular}
+     
+     \begin{tabular}{lr}
+    I, мА & $r_{D}, см$ \\
+    \midrule
+    5 &  14 \\
+    3 &  18 \\
+    1.5 &  26 \\
+    \end{tabular}
+    
 \end{enumerate}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics*[width=0.8\textwidth]{p2.png}
+  \caption{Всё на одном листе}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics*[width=0.8\textwidth]{отдельный график 1.5мА.png}
+  \caption{1.5мА}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics*[width=0.8\textwidth]{отдельный график 3мА.png}
+  \caption{3мА}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics*[width=0.8\textwidth]{отдельный график 5мА.png}
+  \caption{5мА}
+\end{figure}
+
 \section*{Вывод}
-Энергия активации примерно свопадает с табличным значением.
-Как видно из графиков, число Рейнольдса зависит от температуры.
-Время релаксации тоже зависит, и как видно, для стеклянных и стальных шариков оно сильно отличается
+Радиусы не сходятся с табличными значениями, остальное сходится
+% \let\clearpage\relax %хуй знает что это но ебаному теху виднее
 \end{document}

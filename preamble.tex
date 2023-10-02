@@ -5,10 +5,18 @@
 %%% значок в itemize
 % \renewcommand{\labelitemi}{$\cdot$}
 
+%% чтобы картинки норм вставлялись
+\usepackage{floatrow}
+
+% %dark theme
+% \usepackage{xcolor}
+% \pagecolor[rgb]{0.16,0.176,0.243} 
+% \color[rgb]{1,1,1}
+
 %%% Работа с русским языком
 \usepackage{cmap}					% поиск в PDF
-\usepackage{mathtext} 				% русские буквы в формулах
-\usepackage[T1, T2A]{fontenc}			% кодировка %Т1 посоветовал чат гпт
+\usepackage{mathtext} 				% русские буквamsmathы в формулах
+\usepackage[T2A]{fontenc}			% кодировка %Т1 посоветовал чат гпт
 \usepackage[utf8]{inputenc}			% кодировка исходного текста
 \usepackage[english,russian]{babel}	% локализация и переносы
 \usepackage{indentfirst}            % красная строка в первом абзаце
@@ -18,12 +26,15 @@
 \usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} % пакеты AMS
 \usepackage{icomma}                                    % "Умная" запятая
 
+\usepackage{gensymb} % градус
+
+\usepackage{hyperref}
+
 %%% Свои символы и команды
 \usepackage{centernot} % центрированное зачеркивание символа
 \usepackage{stmaryrd}  % некоторые спецсимволы
 \usepackage{dsfont}
 \usepackage{amsthm}
-
 
 \renewcommand{\epsilon}{\ensuremath{\varepsilon}}
 \renewcommand{\phi}{\ensuremath{\varphi}}
