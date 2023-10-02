@@ -26,17 +26,35 @@
 
 \section*{Ход работы}
 \subsection*{Определение магнитного момента магнитных шариков}
-\subsubsection*{Метод А}
+\subsubsection{Метод А}
 \begin{enumerate}
   % \setcounter{enumi}{-1}
-  \item \begin{figure}[H]
-    \includegraphics*[width=0.5\textwidth]{2023-10-01-23-50-52.png}
+  \item Измерим димаетр шариков и взесим их на весах. Таблица:
+  \begin{figure}[H]
+    \resizebox{0.7\textwidth}{!}{
+      \begin{tabular}{|*{11}{c|}}
+        \hline
+        d, см $\pm 0.01$& 0.60 & 0.59 & 0.60 & 0.59 & 0.58 & 0.59 & 0.59 & 0.60 & 0.60 & 0.60 \\
+        \hline
+        \multicolumn{11}{|c|}{$d_\text{ср} = 0.593 \pm 0.001 \text{см}$} \\
+        \hline
+      \end{tabular}
+      }
+    \label{tab:diametrs}
+    \caption{Диаметры шариков}
+  \end{figure}
+  Масса 30 шариков: $24.923 \pm 0.003 \text{г} => $ масса шарика $m=0.8308 \pm\text{г}$
+  \item Проложим между 2 шариками стопку из бумаги и будем медленно увеличивать её, пока равновесие ещё сохраняется. Максимальное расстояние: $r_{max} = 1.785 \pm 0.003$ мм
+  \begin{figure}[H]
+    \includegraphics*[width=0.2\textwidth]{2023-10-01-23-50-52.png}
     \caption{Измерение магнитных моментов шариков}
     \label{ust:met_a}
   \end{figure}
-  $\mathfrak{m}=\sqrt{\frac{mgr^4_{max}}{6}} \text{ ед. СГС}$
+  По формуле:
+  $$\mathfrak{m}=\sqrt{\frac{mgr^4_{max}}{6}} \text{ ед. СГС}$$
+  Получаем $\mk m = $
 \end{enumerate}
-\subsubsection*{Метод Б}
+\subsubsection{Метод Б}
 \begin{enumerate}
   % \setcounter{enumi}{-1}
   \item \begin{figure}[H]
@@ -49,11 +67,30 @@
   сила в зависимости от расстояния между центрами шаров притяжения убывает как $F\varpropto r^{-4}$, будем учитывать взаимодействие верхнего шара только с 3-4 блийжайшими соседями. Сила сцепления двух одинаковых шаров радиусами $R$ c магнитными моментами $\mathfrak{m}$ равна $$F = \sum_{i=1}^{4} \frac{6\mk m^2}{(2iR)^4} = \underline{\frac{3.24}{8}\cdot\frac{\mathfrak{m}^4}{R^4}}\text{ ед. СГС}$$
 \end{enumerate}
 
-\subsection*{Измерение горизонтальной составляющей индукции магнитного
+
+
+\subsection{Измерение горизонтальной составляющей индукции магнитного
 поля Земли}\begin{enumerate}
-  \item 
+  \item \begin{figure}[H]
+    \includegraphics*[width=0.5\textwidth]{2023-10-02-17-27-25.png}
+    \caption{Крутильный маятник во внешнем магнитном поле}
+  \end{figure}
+  \item Период колебаний такого маятника (формула берётся из уравнения колебаний, предполагая, что магнитный момент адитивен):
+  $$T(n) = 2\pi \sqrt{\frac{mR^2}{3\mk m B_\Vert }} \cdot n$$
 \end{enumerate}
 
+
+
+\subsection{Измерение вертикальной составляющей индукции магнитного поля
+Земли. Магнитное наклонение.}
+\begin{enumerate}
+  \item \begin{figure}[H]
+    \includegraphics*[width=0.7\textwidth]{2023-10-02-17-36-48.png}
+    \caption{Измерение вертикальной составляющей поля и магнитного наклонения}
+  \end{figure}
+  \item Формула для $B_\bot:$
+  $$\mathcal{M}_n = m_\text{гр}gr_\text{гр} = n \mk m B_\bot$$
+\end{enumerate}
 
 \section*{Вывод}
 Энергия активации примерно свопадает с табличным значением.
