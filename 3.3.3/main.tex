@@ -1,0 +1,95 @@
+% !TeX root = main.tex
+\documentclass[12pt,a4paper]{article}
+\usepackage{caption}
+\input{../preamble.tex}
+\newcommand{\mk}{\mathfrak}
+\newcommand{\s}[1]{\frac{\sigma_{#1}}{#1}}
+\newcommand{\sq}[2]{\frac{\sigma_{#1}^{#2}}{#1^{#2}}}
+%%% значок в itemize
+\renewcommand{\labelitemi}{$\multimap  $}
+
+\title{
+  \newlength{\imageheight}
+  \settoheight{\imageheight}{A}
+  \texttt{Опыт Миликена\includegraphics*[height=0.7\imageheight]{10_12_22.png}\\ 3.3.3}
+  }
+\author{Александр Ляпин, Кирилл Нелюбин, Б05-207}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section{Цель работы:}
+Обнаружение дискретности электрического заряда
+\section{В работе используются:}  
+Плоский конденсатор в защитном кожухе, осветитель, измерительный микроскоп, выпрямитель, электростатический вольтметр, переключатель напряжения, пульверизатор с маслом, секундомер.
+
+\section*{\texttt{Важные формулы}}\noindent
+Формула заряда капли:
+\begin{align}
+  q=9\pi\sqrt{\frac{2 \eta^3 h^3}{\rho g}}
+    \frac{t_0+t}{Vt_0^{3/2}t}
+    \label{q}
+\end{align}
+Погрешность:
+\begin{align}
+	\s{q} =\sqrt{
+    \sq V 2 + \frac 1 4\sq t 2 + \sq{t_0} 2
+  }
+    \label{sigma_q}
+\end{align}
+
+
+
+\section*{Экспериментальная установка}
+\begin{figure}[H]
+  \includegraphics*[width=0.8\textwidth]{10_10_26.png}
+  \label{ust}
+  \caption{Схема экспериментальной установки для измерения заряда электрона}
+\end{figure}
+
+
+\section{Ход работы}
+\begin{enumerate}
+  \setcounter{enumi}{-1}
+  \item Вычислим из формулы для заряда капли (в начаде), $V\thickapprox 1$кВ.
+  \item Включим осветитель, настроим окуляр на резкое изборажение.
+  \item Аккуратно нажмём на пульверизатор, выберем 1 каплю.
+  \item С помощью секундомера засечём время её падения на 1 мм, включим напряжение, засечём время её падения на 1 мм при включенном напряжении, запишем напряжение. Для каждой капли повторим 3-5 раз для уменьшения случайной погрешности измерения времени.
+  \item Повторим предыдущий пункт для 14 капель, результаты сведём в таблицу (в приложении)
+  \item Вычислим заряды капель:
+  \begin{figure}[h!]
+    \includegraphics*[width=0.95\textwidth]{17_14_01.png}
+    \caption*{заряды капель, $\cdot 10^{-19}$Кл}
+  \end{figure}
+  \item Разобьём на группы, возьмём в каждой медиану, поделим каждую медиану на первую:
+  \begin{figure}[h!]
+    \begin{tabular}{r}
+      1.00 \\
+      3.80 \\
+      6.76 \\
+      7.41 \\
+      8.19 \\
+      \end{tabular}
+      \caption*{\texttt{Заряды капель к наименьшему заряду}}
+  \end{figure}
+  \item Оценим максимальный путь релаксации по формуле:
+  $$s \sim \frac{1}{g} \left( \frac{h}{t_0}\right)^2$$
+  \underline{s = $8.2\cdot 10^{-2}$нм}.
+\end{enumerate}
+
+
+\section*{Вывод}
+Предположение о дискретности заряда не подтверждается. Помешало наблюдение броуновское движение капель (можно убдедиться, исследовав разборс $t$ для отдельной капли)\\
+Путь релаксации: s = $8.2\cdot 10^-2$нМ.
+
+\newpage
+\section*{\texttt{Приложение}}
+\noindent
+\begin{figure}[h!]
+  \input{table data<8.tex}
+  \input{table data>=8.tex}
+  % \label{hui}
+  \caption*{Измерение капель}
+\end{figure}
+
+\end{document}

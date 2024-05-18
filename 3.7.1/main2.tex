@@ -1,0 +1,47 @@
+% !TeX root = main.tex
+\documentclass[12pt,a4paper]{article}
+\input{../preamble.tex}
+\newcommand{\mk}{\mathfrak}
+%%% значок в itemize
+\renewcommand{\labelitemi}{$\multimap  $}
+\title{\texttt{Скин-эффект \\ 3.7.1}}
+\author{Кирилл Нелюбин, Б05-207}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Цель работы:}
+исследовать явление проникновение переменного магнитного поля в медный полый цилиндр
+\section{В работе используются:}
+генератор сигналов АКИП–3420, соленоид, намотанный на полый
+цилиндрический каркас, медный экран в виде полого цилиндра, измерительная катушка, ам
+перметр, вольтметр, двухканальный осциллограф GOS–620, RLC-метр.
+
+\section*{Экспериментальная установка}
+\begin{figure}[H]
+  \includegraphics*[width=0.7\textwidth]{24_12_48.png}
+  \caption*{Экспериментальная установка для изучения скин-эффекта}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics*[width=0.7\textwidth]{24_12_59.png}
+  \caption*{Схема подключения RLC-метра}
+\end{figure}
+% \subsection*{\texttt{Важные константы:}}
+% 24_14_14.png
+\section{Ход работы}
+\subsection{Определение магнитного момента магнитных шариков}
+  \begin{figure}[H]
+    \begin{tabular}{|r|c|r|}
+       $n$ & $m_\text{гр}, \text{гр} \pm 0.003$ &$r_\text{гр},$ см$\pm 0.01$\\
+      \midrule
+       4 & 0.391 & 0.59\\
+       6 & 0.267 & 1.19\\
+       8 & 0.182 & 1.78\\
+      10 & 0.119 & 2.38\\
+    \end{tabular}
+    \caption{Зависимость $m_\text{гр}(n), r_\text{гр}(n)$}      
+  \end{figure}
+\section*{Вывод}
+
+\end{document}
